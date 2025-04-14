@@ -7,47 +7,71 @@
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 <nav>
   <ul>
-    <li><a href="#about">about</a></li>
-    <li><a href="#work">work</a></li>
-    <li><a href="#contact">contact</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#work">Work</a></li>
+    <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
 
 <main>
-  <section id="about">
-    <h1>Your Name</h1>
-    <p>I'm a [your profession] based in [your location].</p>
-    <p>Currently working at <a href="#" target="_blank">Company</a>.</p>
-  </section>
+  <header id="about">
+    <h1 class="fade-in">Your Name</h1>
+    <p class="fade-in delay-1">I'm a [your profession] based in [your location].</p>
+    <p class="fade-in delay-2">Currently working at <a href="#" target="_blank">Company</a>.</p>
+  </header>
 
-  <section id="work">
-    <h2>Work</h2>
-    <div class="project">
-      <h3>Project Title</h3>
-      <p>Project description goes here. Keep it concise.</p>
-      <a href="#" target="_blank">View Project →</a>
+  <section id="work" class="fade-in delay-1">
+    <h2>My Projects</h2>
+
+    <div class="project fade-in delay-2">
+      <h3>Project Title 1</h3>
+      <p>Project description goes here. Explain what you built and technologies used.</p>
+      <a href="#" target="_blank">View Project</a>
     </div>
-    <!-- Repeat project divs as needed -->
+
+    <div class="project fade-in delay-3">
+      <h3>Project Title 2</h3>
+      <p>Another project description with details about your contribution.</p>
+      <a href="#" target="_blank">View Project</a>
+    </div>
   </section>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Feel free to reach out:</p>
+  <section id="contact" class="fade-in delay-2">
+    <h2>Get In Touch</h2>
+    <p>Feel free to reach out for collaborations or just to say hello!</p>
+
     <ul>
-      <li><a href="mailto:your@email.com">Email</a></li>
-      <li><a href="https://twitter.com/yourhandle" target="_blank">Twitter</a></li>
-      <li><a href="https://github.com/yourhandle" target="_blank">GitHub</a></li>
-      <li><a href="https://linkedin.com/in/yourhandle" target="_blank">LinkedIn</a></li>
+      <li>
+        <a href="mailto:your@email.com">
+          <i class="fas fa-envelope"></i> Email
+        </a>
+      </li>
+      <li>
+        <a href="https://twitter.com/yourhandle" target="_blank">
+          <i class="fab fa-twitter"></i> Twitter
+        </a>
+      </li>
+      <li>
+        <a href="https://github.com/yourhandle" target="_blank">
+          <i class="fab fa-github"></i> GitHub
+        </a>
+      </li>
+      <li>
+        <a href="https://linkedin.com/in/yourhandle" target="_blank">
+          <i class="fab fa-linkedin"></i> LinkedIn
+        </a>
+      </li>
     </ul>
   </section>
 </main>
 
-<footer>
+<footer class="fade-in delay-3">
   <p>© <span id="year"></span> Your Name. All rights reserved.</p>
 </footer>
 
