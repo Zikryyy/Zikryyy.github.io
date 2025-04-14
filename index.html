@@ -1,56 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Keep existing head content -->
-  <!-- Add this for better mobile behavior -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Name | Portfolio</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 <nav>
-  <!-- Keep your existing navigation -->
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#work">Work</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
 </nav>
 
-<!-- Hero Parallax Section -->
-<section id="hero" class="parallax">
-  <div class="parallax-content fade-in">
-    <h1>Muhammad Zikry</h1>
-    <p class="delay-1">Bachelor of Computer Engineering Student</p>
-    <a href="#about" class="btn delay-2">Explore My Work</a>
-  </div>
-</section>
+<main>
+  <header id="about">
+    <h1 class="fade-in">Muhammad Zikry</h1>
+    <p class="fade-in delay-1">I'm a Bachelor of Computer Engineering Student based in Seremban,Negeri Sembilan.</p>
+    <p class="fade-in delay-2">Currently working at <a href="#" target="_blank">Company</a>.</p>
+  </header>
 
-<!-- About Section (Regular Content) -->
-<section id="about" class="content-section">
-  <div class="container">
-    <h2>About Me</h2>
-    <!-- Your about content -->
-  </div>
-</section>
+  <section id="work" class="fade-in delay-1">
+    <h2>My Projects</h2>
 
-<!-- Work Parallax Section -->
-<section id="work" class="parallax">
-  <div class="parallax-content">
-    <h2 class="fade-in">My Projects</h2>
-    <!-- Work content can go here or in following content section -->
-  </div>
-</section>
-
-<!-- Projects Grid (Regular Content) -->
-<section class="content-section">
-  <div class="container">
-    <div class="project-grid">
-      <!-- Your project cards -->
+    <div class="project fade-in delay-2">
+      <h3>Project Title 1</h3>
+      <p>Project description goes here. Explain what you built and technologies used.</p>
+      <a href="#" target="_blank">View Project</a>
     </div>
-  </div>
-</section>
 
-<!-- Contact Section -->
-<section id="contact" class="content-section">
-  <!-- Your contact form/content -->
-</section>
+    <div class="project fade-in delay-3">
+      <h3>Project Title 2</h3>
+      <p>Another project description with details about your contribution.</p>
+      <a href="#" target="_blank">View Project</a>
+    </div>
+  </section>
 
-<footer>
-  <!-- Your footer -->
+  <section id="contact" class="fade-in delay-2">
+    <h2>Get In Touch</h2>
+    <p>Feel free to reach out for collaborations or just to say hello!</p>
+
+    <ul>
+      <li>
+        <a href="mailto:your@email.com">
+          <i class="fas fa-envelope"></i> Email
+        </a>
+      </li>
+      <li>
+        <a href="https://twitter.com/yourhandle" target="_blank">
+          <i class="fab fa-twitter"></i> Twitter
+        </a>
+      </li>
+      <li>
+        <a href="https://github.com/yourhandle" target="_blank">
+          <i class="fab fa-github"></i> GitHub
+        </a>
+      </li>
+      <li>
+        <a href="https://linkedin.com/in/yourhandle" target="_blank">
+          <i class="fab fa-linkedin"></i> LinkedIn
+        </a>
+      </li>
+    </ul>
+  </section>
+</main>
+
+<footer class="fade-in delay-3">
+  <p>© <span id="year"></span> Your Name. All rights reserved.</p>
 </footer>
 
 <script src="assets/js/script.js"></script>
