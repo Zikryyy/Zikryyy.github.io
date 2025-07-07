@@ -11,15 +11,14 @@
   <style>
     /* Blue-Black Minimalist Theme with Gradient Sections */
     :root {
-      --primary: #1e90ff;
-      --background: #0f172a;
-      --surface: #1e293b;
-      --text: #e2e8f0;
-      --text-secondary: #94a3b8;
-      --terminal-bar: #1a2535;
-      --shadow: rgba(0, 0, 0, 0.2);
+      --primary: #8ab4f8;           /* Soft blue */
+      --background: #1a1b1e;        /* Soft dark background */
+      --surface: #2d2e33;          /* Slightly lighter dark for cards */
+      --text: #e1e2e4;             /* Soft white text */
+      --text-secondary: #9ba1a6;    /* Muted gray text */
+      --terminal-bar: #2d2e33;     /* Dark nav bar */
+      --shadow: rgba(0, 0, 0, 0.3); /* Darker shadow */
     }
-
 
     * {
       margin: 0;
@@ -40,8 +39,7 @@
     /* Navigation Bar */
     .navbar {
       display: flex;
-      justify-content: space-between;
-      align-items: center;
+      justify-content: center; /* Center the entire nav content */
       padding: 1rem 2rem;
       background: var(--terminal-bar);
       position: sticky;
@@ -50,11 +48,18 @@
       box-shadow: 0 2px 4px var(--shadow);
     }
 
+    .navbar .nav-content {
+      display: flex;
+      align-items: center;
+      gap: 2rem; /* Space between logo and menu */
+    }
+
     .navbar .logo {
       font-size: 1.2rem;
       color: var(--text);
       font-weight: 600;
-      text-transform: uppercase;
+      /* Remove or comment out the following line */
+      /* text-transform: uppercase; */
     }
 
     .navbar-menu {
@@ -85,6 +90,9 @@
       animation: fadeInSection 0.8s ease-out forwards;
       position: relative;
       overflow: hidden;
+      display: flex; /* Use Flexbox for centering */
+      justify-content: center; /* Center horizontally */
+      align-items: center; /* Center vertically */
     }
 
     .section:nth-child(1) { animation-delay: 0.2s; }
@@ -100,34 +108,37 @@
 
     /* Section Gradient Backgrounds */
     #home {
-      background: linear-gradient(135deg, rgba(30, 144, 255, 0.1), rgba(15, 23, 42, 0.7));
+      background: linear-gradient(135deg, rgba(138, 180, 248, 0.05), rgba(26, 27, 30, 0.95));
     }
 
     #about {
-      background: linear-gradient(135deg, rgba(30, 144, 255, 0.15), rgba(15, 23, 42, 0.75));
+      background: linear-gradient(135deg, rgba(138, 180, 248, 0.08), rgba(26, 27, 30, 0.95));
     }
 
     #projects {
-      background: linear-gradient(135deg, rgba(30, 144, 255, 0.2), rgba(15, 23, 42, 0.8));
+      background: linear-gradient(135deg, rgba(138, 180, 248, 0.1), rgba(26, 27, 30, 0.95));
     }
 
     #certifications {
-      background: linear-gradient(135deg, rgba(30, 144, 255, 0.25), rgba(15, 23, 42, 0.85));
+      background: linear-gradient(135deg, rgba(138, 180, 248, 0.12), rgba(26, 27, 30, 0.95));
     }
 
     #contact {
-      background: linear-gradient(135deg, rgba(30, 144, 255, 0.3), rgba(15, 23, 42, 0.9));
+      background: linear-gradient(135deg, rgba(138, 180, 248, 0.15), rgba(26, 27, 30, 0.95));
     }
 
     /* Home Section */
     #home {
       text-align: center;
+      flex-direction: column; /* Stack elements vertically */
     }
 
+    /* Update the existing hero-title style */
     .hero-title {
       font-size: 3rem;
       color: var(--primary);
       margin-bottom: 1rem;
+      min-height: 3.2rem; /* Prevent layout shift */
     }
 
     .hero-text {
@@ -152,33 +163,48 @@
     }
 
     .hero-buttons .view-work:hover {
-      background: #104e8b;
+      background: #6d8ac7;
     }
 
     .hero-buttons .contact-me,
     .hero-buttons .resume {
       background: var(--surface);
       color: var(--text);
+      border: 1px solid rgba(138, 180, 248, 0.3);
     }
 
     .hero-buttons .contact-me:hover,
     .hero-buttons .resume:hover {
-      background: #2a3b54;
+      background: #3d3e45;
     }
 
     /* About Section */
     #about {
-      display: flex;
-      align-items: center;
-      gap: 2rem;
-    }
+  flex-direction: row;
+  align-items: flex-start; /* Change to flex-start to align at the top */
+  gap: 6rem; /* Increase gap between image and content */
+  justify-content: center;
+  padding-top: 6rem; /* Add more padding at the top */
+}
 
-    .about-image img {
-      width: 300px;
-      height: 400px;
-      object-fit: cover;
-      border-radius: 8px;
-      box-shadow: 0 4px 12px var(--shadow);
+.about-image {
+  flex-shrink: 0;
+  margin-top: 4rem; /* Increase top margin */
+  position: sticky; /* Make image sticky */
+  top: 100px; /* Distance from top when sticky */
+}
+
+.about-image img {
+  width: 280px; /* Slightly smaller width */
+  height: 380px; /* Slightly smaller height */
+  object-fit: cover;
+  border-radius: 4px; /* Smaller border radius for more minimalist look */
+  box-shadow: 0 2px 8px var(--shadow); /* Subtler shadow */
+  transition: transform 0.3s ease;
+}
+
+    .about-content {
+      max-width: 600px; /* Limit content width for better readability */
     }
 
     .about-content h2 {
@@ -205,16 +231,14 @@
 
     .skills-tools li,
     .education li {
-      background: rgba(30, 144, 255, 0.2);
-      padding: 0.5rem 1rem;
-      border-radius: 20px;
-      font-size: 0.9rem;
+      background: rgba(138, 180, 248, 0.1);
       color: var(--text);
     }
 
     /* Projects Section */
     #projects {
       text-align: center;
+      flex-direction: column; /* Stack title, text, and grid vertically */
     }
 
     .project-grid {
@@ -226,6 +250,7 @@
 
     .project-card {
       background: var(--surface);
+      border: 1px solid rgba(138, 180, 248, 0.1);
       padding: 1.5rem;
       border-radius: 8px;
       box-shadow: 0 4px 12px var(--shadow);
@@ -262,12 +287,12 @@
     }
 
     .status.in-development {
-      background: #ffcc00;
+      background: #ffd700;
       color: var(--background);
     }
 
     .status.completed {
-      background: #00cc00;
+      background: #4caf50;
       color: var(--background);
     }
 
@@ -279,6 +304,7 @@
     /* Certifications Section */
     #certifications {
       text-align: center;
+      flex-direction: column; /* Stack title, text, and grid vertically */
     }
 
     .certification-grid {
@@ -290,6 +316,7 @@
 
     .certification-card {
       background: var(--surface);
+      border: 1px solid rgba(138, 180, 248, 0.1);
       padding: 1.5rem;
       border-radius: 8px;
       box-shadow: 0 4px 12px var(--shadow);
@@ -314,14 +341,15 @@
 
     /* Contact Section */
     #contact {
-      display: flex;
-      gap: 2rem;
-      justify-content: space-between;
+      flex-direction: column; /* Stack info and form vertically */
+      align-items: center; /* Center the columns */
+      text-align: center;
     }
 
     .contact-info,
     .contact-form {
       flex: 1;
+      max-width: 500px; /* Limit width for better centering */
     }
 
     .contact-info h3 {
@@ -343,13 +371,19 @@
 
     .contact-form input,
     .contact-form textarea {
+      background: var(--surface);
+      border: 1px solid rgba(138, 180, 248, 0.2);
       width: 100%;
       padding: 0.8rem;
       margin-bottom: 1rem;
-      border: 1px solid var(--text-secondary);
       border-radius: 4px;
-      background: rgba(30, 144, 255, 0.1);
       color: var(--text);
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-color: var(--primary);
+      outline: none;
     }
 
     .contact-form button {
@@ -393,6 +427,11 @@
         gap: 1rem;
       }
 
+      .navbar .nav-content {
+        flex-direction: column;
+        text-align: center;
+      }
+
       .section {
         padding: 4rem 1.5rem;
       }
@@ -400,6 +439,7 @@
       #about {
         flex-direction: column;
         text-align: center;
+        align-items: center; /* Center on mobile */
       }
 
       .about-image img {
@@ -417,25 +457,162 @@
         grid-template-columns: 1fr;
       }
     }
+
+    /* Add these new styles */
+    .typing-text {
+      display: inline-block;
+    }
+
+    .cursor {
+      display: inline-block;
+      width: 3px;
+      animation: blink 0.75s step-end infinite;
+      color: var(--primary);
+    }
+
+    @keyframes blink {
+      from, to { opacity: 1; }
+      50% { opacity: 0; }
+    }
+    /* Update mobile responsive styles */
+    @media (max-width: 768px) {
+  #about {
+    flex-direction: column;
+    gap: 3rem;
+    padding-top: 4rem;
+  }
+
+  .about-image {
+    position: relative; /* Remove sticky positioning on mobile */
+    top: 0;
+    margin-top: 0;
+  }
+
+  .about-image img {
+    width: 240px; /* Even smaller on mobile */
+    height: 320px;
+  }
+}
+
+    /* Add these new styles in your style section */
+    .skills-tools ul {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); /* Smaller grid items */
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .skills-tools li {
+      background: var(--surface);
+      border: 1px solid rgba(138, 180, 248, 0.1);
+      border-radius: 8px;
+      padding: 0.8rem; /* Reduced padding */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.4rem; /* Reduced gap */
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .skills-tools li:hover {
+      transform: translateY(-3px); /* Smaller lift effect */
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .skills-tools li i {
+      font-size: 1.5rem; /* Smaller icon size */
+      margin-bottom: 0.3rem;
+      opacity: 0.9; /* Slightly reduced opacity for softer look */
+    }
+
+    .skill-name {
+      font-size: 0.8rem; /* Smaller font size */
+      text-align: center;
+      color: var(--text-secondary); /* Softer text color */
+    }
+
+    /* Add subtle hover effect for the text */
+    .skills-tools li:hover .skill-name {
+      color: var(--text);
+    }
+    /* Add these styles to your CSS */
+    .tabs {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .tab-button {
+      padding: 0.5rem 1.5rem;
+      background: var(--surface);
+      border: 1px solid rgba(138, 180, 248, 0.2);
+      border-radius: 6px;
+      color: var(--text-secondary);
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .tab-button.active {
+      background: rgba(138, 180, 248, 0.1);
+      color: var(--primary);
+      border-color: var(--primary);
+    }
+
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    /* Inside your existing <style> tag, add or modify these styles */
+    .education-experience {
+      margin-top: 3rem; /* This will add space above the Education and Experience section */
+    }
+
+    .tabs {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      margin-top: 2rem; /* This adds additional space above the tab buttons */
+    }
   </style>
 </head>
 <body>
 <!-- Navigation Bar -->
 <nav class="navbar">
-  <div class="logo">Muhammad Zikry</div>
-  <ul class="navbar-menu">
-    <li><a href="#home">Home</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#certifications">Certifications</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
+  <div class="nav-content">
+    <div class="logo">Muhammad Zikry</div>
+    <ul class="navbar-menu">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#certifications">Certifications</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
 </nav>
 
 <!-- Home Section -->
 <section id="home" class="section">
-  <h1 class="hero-title">Hi, I'm Muhammad Zikry</h1>
-  <p class="hero-text">A dynamic and self-taught Computer Engineering student with an interest in Programming and Embedded Systems.</p>
+  <!-- Update the h1 in the home section -->
+  <h1 class="hero-title">
+    <span class="typing-text"></span>
+    <span class="cursor">|</span>
+  </h1>
+  <p class="hero-text">Computer Engineering student specializing in embedded systems and software development, with a focus on creating efficient, real-world tech solutions</p>
   <div class="hero-buttons">
     <a href="#projects" class="view-work">View My Work</a>
     <a href="#contact" class="contact-me">Contact Me</a>
@@ -453,26 +630,119 @@
     <p>Get to know more about who I am and what I do</p>
     <div>
       <h3>Who am I?</h3>
-      <p>I'm a Computer Engineering Student based in Seremban, Negeri Sembilan. I'm passionate about creating digital solutions that are both functional and innovative. My journey in technology began when I was in high school and discovered my passion for programming. Since then, I've worked on various projects ranging from embedded systems to software development.</p>
+      <p>I'm a Computer Engineering student based in Seremban, Negeri Sembilan, with a strong interest in building practical and innovative tech solutions. I started programming in high school and have since gained experience in embedded systems, IoT, web development, and machine learning through various academic and personal projects. I'm passionate about combining hardware and software to create systems that solve real-world problems, and I'm always eager to learn and grow in the tech field.</p>
     </div>
     <div class="skills-tools">
       <h3>Skills & Tools</h3>
       <ul>
-        <li>Python</li>
-        <li>C++</li>
-        <li>Arduino</li>
-        <li>ESP32</li>
-        <li>Git</li>
-        <li>Docker</li>
+        <li>
+          <i class="fab fa-python" style="color: #8ab4f8;"></i>
+          <span class="skill-name">Python</span>
+        </li>
+        <li>
+          <i class="fab fa-js" style="color: #8ab4f8;"></i>
+          <span class="skill-name">JavaScript</span>
+        </li>
+        <li>
+          <i class="fas fa-code" style="color: #8ab4f8;"></i>
+          <span class="skill-name">C++</span>
+        </li>
+        <li>
+          <i class="fas fa-hashtag" style="color: #8ab4f8;"></i>
+          <span class="skill-name">C#</span>
+        </li>
+        <li>
+          <i class="fab fa-html5" style="color: #8ab4f8;"></i>
+          <span class="skill-name">HTML</span>
+        </li>
+        <li>
+          <i class="fab fa-css3-alt" style="color: #8ab4f8;"></i>
+          <span class="skill-name">CSS</span>
+        </li>
+        <li>
+          <i class="fab fa-node-js" style="color: #8ab4f8;"></i>
+          <span class="skill-name">Node.js</span>
+        </li>
+        <li>
+          <i class="fas fa-flask" style="color: #8ab4f8;"></i>
+          <span class="skill-name">Flask</span>
+        </li>
+        <li>
+          <i class="fas fa-bolt" style="color: #8ab4f8;"></i>
+          <span class="skill-name">FastAPI</span>
+        </li>
+        <li>
+          <i class="fas fa-book" style="color: #8ab4f8;"></i>
+          <span class="skill-name">Jupyter</span>
+        </li>
+        <li>
+          <i class="fas fa-mobile-alt" style="color: #8ab4f8;"></i>
+          <span class="skill-name">Flutter</span>
+        </li>
+        <li>
+          <i class="fab fa-android" style="color: #8ab4f8;"></i>
+          <span class="skill-name">Android Studio</span>
+        </li>
+        <li>
+          <i class="fas fa-fire" style="color: #8ab4f8;"></i>
+          <span class="skill-name">Firebase</span>
+        </li>
+        <li>
+          <i class="fab fa-github" style="color: #8ab4f8;"></i>
+          <span class="skill-name">GitHub</span>
+        </li>
+        <li>
+          <i class="fas fa-palette" style="color: #8ab4f8;"></i>
+          <span class="skill-name">Canva</span>
+        </li>
+        <li>
+          <i class="fab fa-google" style="color: #8ab4f8;"></i>
+          <span class="skill-name">Google Sites</span>
+        </li>
+        <li>
+          <i class="fab fa-linux" style="color: #8ab4f8;"></i>
+          <span class="skill-name">Linux</span>
+        </li>
+        <li>
+          <i class="fab fa-windows" style="color: #8ab4f8;"></i>
+          <span class="skill-name">Windows</span>
+        </li>
       </ul>
     </div>
-    <div class="education">
-      <h3>Education</h3>
-      <ul>
-        <li>2021-2025 - Bachelor of Computer Engineering with Honours, UTeM</li>
-        <li>2020-2021 -
-          Matriculation in Engineering, Johore Engineering Matriculation College </li>
-      </ul>
+    <div class="education-experience">
+      <div class="tabs">
+        <button class="tab-button active" data-tab="education">Education</button>
+        <button class="tab-button" data-tab="experience">Experience</button>
+      </div>
+
+      <div class="tab-content active" id="education">
+        <h3>Education</h3>
+        <ul>
+          <li>2021-2025 - Bachelor of Computer Engineering with Honours, UTeM</li>
+          <li>2020-2021 - Matriculation in Engineering, Johore Engineering Matriculation College</li>
+        </ul>
+      </div>
+
+      <div class="tab-content" id="experience">
+        <h3>Experience</h3>
+        <ul>
+          <li>
+            <h4>Software Engineering Intern</h4>
+            <p>Tech Company - 2024</p>
+            <p>Developed and maintained web applications using React and Node.js. Collaborated with senior developers on various projects.</p>
+          </li>
+          <li>
+            <h4>Student Research Assistant</h4>
+            <p>UTeM - 2023</p>
+            <p>Assisted in IoT research projects, developed embedded systems solutions, and conducted data analysis.</p>
+          </li>
+          <li>
+            <h4>Web Development Freelancer</h4>
+            <p>Self-employed - 2022-Present</p>
+            <p>Created responsive websites and web applications for various clients using modern web technologies.</p>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
@@ -536,8 +806,8 @@
   <div class="contact-info">
     <h3>Get In Touch</h3>
     <p>Feel free to reach out for collaborations or just a friendly hello!</p>
-    <p><i class="fas fa-envelope"></i> <a href="mailto:your@email.com">your@email.com</a></p>
-    <p><i class="fas fa-phone"></i> +60 12-345 6789</p>
+    <p><i class="fas fa-envelope"></i> <a href="mailto:muhdzikryzaharudin@gmail.com">muhdzikryzaharudin@gmail.com</a></p>
+    <p><i class="fas fa-phone"></i> +60 16-615 2715</p>
     <p><i class="fas fa-map-marker-alt"></i> Seremban, Negeri Sembilan</p>
   </div>
   <div class="contact-form">
@@ -570,6 +840,71 @@
       document.querySelector(this.getAttribute('href')).scrollIntoView({
         behavior: 'smooth',
         block: 'start'
+      });
+    });
+  });
+</script>
+
+<!-- Add this JavaScript at the end of the body, before the closing </body> tag -->
+<script>
+  // Enhanced version with repeat capability
+  function typeWriter(text, element, speed = 100, delay = 2000) {
+    let i = 0;
+    element.textContent = ''; // Clear the text
+
+    function type() {
+      if (i < text.length) {
+        element.textContent += text.charAt(i);
+        i++;
+        setTimeout(type, speed);
+      } else {
+        // Optional: To make it repeat after a delay
+        // setTimeout(() => {
+        //   i = 0;
+        //   element.textContent = '';
+        //   type();
+        // }, delay);
+      }
+    }
+
+    type();
+  }
+
+  // Add fade-in effect
+  document.addEventListener('DOMContentLoaded', function() {
+    const typingElement = document.querySelector('.typing-text');
+    const textToType = "Hi, I'm Muhammad Zikry";
+
+    // Add fade-in animation
+    typingElement.style.opacity = '0';
+    typingElement.style.transition = 'opacity 0.5s ease-in-out';
+
+    setTimeout(() => {
+      typingElement.style.opacity = '1';
+      // Start typing animation
+      typeWriter(textToType, typingElement, 100);
+    }, 500);
+  });
+</script>
+<script>
+  // Add this to your existing JavaScript
+  document.addEventListener('DOMContentLoaded', function() {
+    // Tab switching functionality
+    const tabButtons = document.querySelectorAll('.tab-button');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    tabButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        // Remove active class from all buttons and contents
+        tabButtons.forEach(btn => btn.classList.remove('active'));
+        tabContents.forEach(content => content.classList.remove('active'));
+
+        // Add active class to clicked button
+        button.classList.add('active');
+
+        // Show corresponding content
+        const tabId = button.getAttribute('data-tab');
+        document.getElementById(tabId).classList.add('active');
       });
     });
   });
