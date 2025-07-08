@@ -314,11 +314,6 @@
         }
 
         /* Certifications Section */
-        .certification-card,
-        .education-box {
-            background: var(--surface);
-            border: 1px solid rgba(0, 51, 102, 0.08);
-        }
         #certifications {
             text-align: center;
             flex-direction: column; /* Stack title, text, and grid vertically */
@@ -326,34 +321,71 @@
 
         .certification-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2.5rem;
         }
 
         .certification-card {
+            position: relative;
             background: var(--surface);
-            border: 1px solid rgba(138, 180, 248, 0.1);
-            padding: 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px var(--shadow);
-            text-align: left;
+            border: none;
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 51, 102, 0.1);
+        }
+
+        .certification-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 51, 102, 0.15);
+        }
+
+        .certification-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(to right, var(--accent), var(--primary));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .certification-card:hover::before {
+            opacity: 1;
         }
 
         .certification-card h3 {
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
+            font-size: 1.4rem;
+            margin-bottom: 0.8rem;
+            color: var(--primary);
         }
 
         .certification-card p {
             color: var(--text-secondary);
-            font-size: 0.9rem;
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
         }
 
         .certification-card a {
-            color: var(--primary);
-            text-decoration: none;
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: transparent;
+            border: 1px solid var(--accent);
+            border-radius: 20px;
+            color: var(--accent);
             font-size: 0.9rem;
+            text-decoration: none;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .certification-card a:hover {
+            background: var(--accent);
+            color: var(--surface);
         }
 
         /* Contact Section */
@@ -985,7 +1017,7 @@
                     <span class="skill-name">FastAPI</span>
                 </li>
                 <li>
-                    <i class="fas fa-book" style="color: #8ab4f8;"></i>
+                    <i costado="1" class="fas fa-book" style="color: #8ab4f8;"></i>
                     <span class="skill-name">Jupyter</span>
                 </li>
                 <li>
@@ -1050,18 +1082,18 @@
                 <h3>Experience</h3>
                 <ul>
                     <li>
-                        <h4>Software Engineering Intern</h4>
-                        <p>Tech Company - 2024</p>
+                        <h4>Yuen Fee (Wan Soon) Engineering Sdn. Bhd.</h4>
+                        <p>IT Department - 2025</p>
                         <p>Developed and maintained web applications using React and Node.js. Collaborated with senior developers on various projects.</p>
                     </li>
                     <li>
-                        <h4>Student Research Assistant</h4>
+                        <h4>test</h4>
                         <p>UTeM - 2023</p>
-                        <p>Assisted in IoT research projects, developed embedded systems solutions, and conducted data analysis.</p>
+                        <p>test</p>
                     </li>
                     <li>
-                        <h4>Web Development Freelancer</h4>
-                        <p>Self-employed - 2022-Present</p>
+                        <h4>Customer Service at AEON SDN,BHD</h4>
+                        <p>Part Time - 2022-Present</p>
                         <p>Created responsive websites and web applications for various clients using modern web technologies.</p>
                     </li>
                 </ul>
@@ -1076,22 +1108,22 @@
     <p>Here are some of my recent works</p>
     <div class="project-grid">
         <div class="project-card">
-            <h3>RFID Security System</h3>
-            <p>Developed an RFID-based access control system using Arduino and C++. Integrated with a mobile app for real-time monitoring.</p>
+            <h3>MindSight: Facial Emotion Recognition for Mental Health Assessment</h3>
+            <p> AI-powered application that combines facial emotion recognition technology with standardized psychological assessments to provide comprehensive mental health insights</p>
             <span class="status in-development">In Development</span>
-            <a href="#">Project Page</a>
+            <a href="https://github.com/p1sangmas/MindSight">Project Page</a>
         </div>
         <div class="project-card">
-            <h3>IoT Weather Station</h3>
-            <p>Built a weather monitoring system using ESP32 and Python, with data visualization through a web dashboard.</p>
+            <h3>RFID Audio-Jungle Zoo Jams Tram</h3>
+            <p> RFID-based interactive audio guide system for zoo exhibits using Arduino and MP3 modules, enhancing visitor engagement through automated, location-specific educational content.</p>
             <span class="status completed">Completed</span>
-            <a href="#">Project Page</a>
+            <a href="https://junglejamstram.pages.dev/">Project Page</a>
         </div>
         <div class="project-card">
-            <h3>Embedded Sensor Network</h3>
-            <p>Designed a network of sensors for environmental monitoring using Raspberry Pi and MQTT protocol.</p>
+            <h3>Blue Maize Maturity Estimation Using Machine Learning</h3>
+            <p> Intelligent web based application that uses RGB color analysis and environmental factors to determine if maize crops are mature or immature, helping farmers optimize harvest timing.</p>
             <span class="status completed">Completed</span>
-            <a href="#">Project Page</a>
+            <a href="https://maize-prediction-website.pages.dev/">Project Page</a>
         </div>
     </div>
 </section>
@@ -1099,27 +1131,47 @@
 <!-- Certifications Section -->
 <section id="certifications" class="section">
     <h2>Certifications</h2>
-    <p>Here are some of my professional certifications</p>
+    <p>Some Certifications showcasing my expertise</p>
     <div class="certification-grid">
         <div class="certification-card">
-            <h3>Embedded Systems with ARM</h3>
-            <p>Issued Jun 2025 - Coursera</p>
-            <a href="#">Show Credential</a>
+            <h3>Introduction to MongoDB</h3>
+            <p>Issued Jun 2025 - MongoDB</p>
+            <a href="https://ti-user-certificates.s3.amazonaws.com/ae62dcd7-abdc-4e90-a570-83eccba49043/ac5ae80a-9fa9-4a53-bcfb-9cb8401f20c7-muhammad-zikry-eafd9e5a-0723-4e95-b181-2ed522861327-certificate.pdf">View Credential</a>
         </div>
         <div class="certification-card">
-            <h3>Python for Data Science</h3>
-            <p>Issued May 2025 - IBM</p>
-            <a href="#">Show Credential</a>
+            <h3>My5G Ericsson Malaysia Pioneers Programme</h3>
+            <p>Issued April 2025</p>
+            <a href="https://www.credly.com/badges/a59177eb-350b-4b71-b1c5-360e7fd20abe">View Credential</a>
         </div>
         <div class="certification-card">
-            <h3>Cybersecurity Fundamentals</h3>
-            <p>Issued Apr 2024 - Cisco</p>
-            <a href="#">Show Credential</a>
+            <h3>Industry Award - Vi Show 2025</h3>
+            <p>Issued June 2025 - FTKEK,UTeM</p>
+            <a href="https://turquoise-katusha-66.tiiny.site">View Credential</a>
         </div>
         <div class="certification-card">
-            <h3>Introduction to IoT</h3>
-            <p>Issued Mar 2024 - edX</p>
-            <a href="#">Show Credential</a>
+            <h3>Microsoft AI for MY Future</h3>
+            <p>Issued May 2025 - Mereka</p>
+            <a href="#">View Credential</a>
+        </div>
+        <div class="certification-card">
+            <h3>KL International Invention & Innovation Symposium 2025</h3>
+            <p>Issued August 2025 -Digit360 </p>
+            <a href="#">View Credential</a>
+        </div>
+        <div class="certification-card">
+            <h3>Introduction to Python Level 1</h3>
+            <p>Issued July 2025 -(UTem)Top Coder Malaysia </p>
+            <a href="#">View Credential</a>
+        </div>
+        <div class="certification-card">
+            <h3>TRIZ Level 1 (Theory of Inventive Problem Solving)</h3>
+            <p>Issued July 2025 -(UTem)Top Coder Malaysia </p>
+            <a href="#">View Credential</a>
+        </div>
+        <div class="certification-card">
+            <h3>INOTEK FTKEK-Silver Medal (Category of System Engineering)</h3>
+            <p>Issued July 2025 -FTKEK,UTeM</p>
+            <a href="#">View Credential</a>
         </div>
     </div>
 </section>
@@ -1149,7 +1201,7 @@
     <div class="social-icons">
         <a href="#"><i class="fab fa-twitter"></i></a>
         <a href="#"><i class="fab fa-linkedin"></i></a>
-        <a href="#"><i class="fab fa-github"></i></a>
+        <a href="https://github.com/Zikryyy"><i class="fab fa-github"></i></a>
         <a href="#"><i class="fab fa-instagram"></i></a>
     </div>
     <p>© 2025 Muhammad Zikry. All rights reserved.</p>
